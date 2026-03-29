@@ -8,21 +8,56 @@
   body {
     font-family: Arial, sans-serif;
     background-color: #f0fff0;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: #2e7d32;
+    text-align: center;
+    margin: 30px 0 20px 0;
+  }
+
+  /* Ortadaki video alanı */
+  .video-section {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .video-wrapper {
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
-  h1 { color: #2e7d32; margin-bottom: 20px; }
 
-  /* Horizontal scroll container */
+  .video-wrapper video {
+    width: 100%;
+    max-height: 70vh;
+    border-radius: 18px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
+    background: #000;
+  }
+
+  /* Kartlar videonun altına taşındı */
+  .plants-section {
+    padding: 30px 20px 50px 20px;
+  }
+
   .sensor-container {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     gap: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .sensor {
@@ -42,78 +77,95 @@
   }
 
   img {
-  width: 100px;
-  display: block;        /* en önemli satır */
-  margin: 0 auto;        /* ortalar */
-  transition: transform 1s ease, filter 0.3s ease;
-}
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    transition: transform 1s ease, filter 0.3s ease;
+  }
 
-  p { margin: 5px 0; }
+  p {
+    margin: 5px 0;
+  }
 </style>
 </head>
 <body>
 
-<h1>Bitki İzleme Paneli</h1>
+  <!-- Sayfanın ortasında video -->
+  <section class="video-section">
+    <h1>Bitki İzleme Paneli</h1>
 
-<div class="sensor-container">
+    <div class="video-wrapper">
+      <video controls autoplay muted>
+        <source src="projeTanitim.mp4" type="video/mp4">
+        Tarayıcınız video etiketini desteklemiyor.
+      </video>
+    </div>
+  </section>
 
-  <!-- 7 Panel -->
-  <div class="sensor" onclick="window.location.href='Marul.html';">
-    <h3>Marul</h3>
-    <img src="https://www.ufuktarim.com/yuklemeler/recete-gorselleri/default/marul.jpg" alt="Marul">
-    <p>Nem: <span class="value">--</span> %</p>
-    <p>Sıcaklık: <span class="value">--</span> °C</p>
-    <p>Işık: <span class="value">--</span> lx</p>
-  </div>
+  <!-- Üstteki alanlar aşağıya taşındı -->
+  <section class="plants-section">
+    <div class="sensor-container">
 
-  <div class="sensor" onclick="window.location.href='soya.html';">
-    <h3>Soya Fasulyesi</h3>
-    <img src="https://vamostarim.com/wp-content/uploads/2022/12/Soya-Fasulyesi-Nedir-Nerede-Yetisir-Besin-Degeri.jpg" alt="Soya Fasulyesi">
-    <p>Nem: <span class="value">--</span> %</p>
-    <p>Sıcaklık: <span class="value">--</span> °C</p>
-    <p>Işık: <span class="value">--</span> lx</p>
-  </div>
+      <div class="sensor" onclick="window.location.href='Marul.html';">
+        <h3>Marul</h3>
+        <img src="https://www.ufuktarim.com/yuklemeler/recete-gorselleri/default/marul.jpg" alt="Marul">
+        <p>Nem: <span class="value">--</span> %</p>
+        <p>Sıcaklık: <span class="value">--</span> °C</p>
+        <p>Işık: <span class="value">--</span> lx</p>
+      </div>
 
-  <div class="sensor" onclick="window.location.href='Patates.html';">
-    <h3>Patates</h3>
-    <img src="https://apelasyon.com/images/icerikler/patates-mucizesi-apelasyon-60b28690a0a80.jpg" alt="Patates">
-    <p>Nem: <span class="value">--</span> %</p>
-    <p>Sıcaklık: <span class="value">--</span> °C</p>
-    <p>Işık: <span class="value">--</span> lx</p>
-  </div>
+      <div class="sensor" onclick="window.location.href='soya.html';">
+        <h3>Soya Fasulyesi</h3>
+        <img src="https://vamostarim.com/wp-content/uploads/2022/12/Soya-Fasulyesi-Nedir-Nerede-Yetisir-Besin-Degeri.jpg" alt="Soya Fasulyesi">
+        <p>Nem: <span class="value">--</span> %</p>
+        <p>Sıcaklık: <span class="value">--</span> °C</p>
+        <p>Işık: <span class="value">--</span> lx</p>
+      </div>
 
-  <div class="sensor" onclick="window.location.href='domates.html';">
-    <h3>Domates</h3>
-    <img src="https://toprakana.com.tr/wp-content/uploads/2021/12/cherry-domates-kg-1481-jpg.jpeg" alt="Domates">
-    <p>Nem: <span class="value">--</span> %</p>
-    <p>Sıcaklık: <span class="value">--</span> °C</p>
-    <p>Işık: <span class="value">--</span> lx</p>
-  </div>
+      <div class="sensor" onclick="window.location.href='Patates.html';">
+        <h3>Patates</h3>
+        <img src="https://apelasyon.com/images/icerikler/patates-mucizesi-apelasyon-60b28690a0a80.jpg" alt="Patates">
+        <p>Nem: <span class="value">--</span> %</p>
+        <p>Sıcaklık: <span class="value">--</span> °C</p>
+        <p>Işık: <span class="value">--</span> lx</p>
+      </div>
 
-  <div class="sensor" onclick="window.location.href='cilek.html';">
-    <h3>Çilek</h3>
-    <img src="https://www.mottofresh.com/images/cilek.jpg" alt="Çilek">
-    <p>Nem: <span class="value">--</span> %</p>
-    <p>Sıcaklık: <span class="value">--</span> °C</p>
-    <p>Işık: <span class="value">--</span> lx</p>
-  </div>
+      <div class="sensor" onclick="window.location.href='domates.html';">
+        <h3>Domates</h3>
+        <img src="https://toprakana.com.tr/wp-content/uploads/2021/12/cherry-domates-kg-1481-jpg.jpeg" alt="Domates">
+        <p>Nem: <span class="value">--</span> %</p>
+        <p>Sıcaklık: <span class="value">--</span> °C</p>
+        <p>Işık: <span class="value">--</span> lx</p>
+      </div>
 
-  <div class="sensor" onclick="window.location.href='biber.html';">
-    <h3>Biber</h3>
-    <img src="https://www.islek.com.tr/images/product/6035321654721-355-biber.jpg" alt="Biber">
-    <p>Nem: <span class="value">--</span> %</p>
-    <p>Sıcaklık: <span class="value">--</span> °C</p>
-    <p>Işık: <span class="value">--</span> lx</p>
-  </div>
+      <div class="sensor" onclick="window.location.href='cilek.html';">
+        <h3>Çilek</h3>
+        <img src="https://www.mottofresh.com/images/cilek.jpg" alt="Çilek">
+        <p>Nem: <span class="value">--</span> %</p>
+        <p>Sıcaklık: <span class="value">--</span> °C</p>
+        <p>Işık: <span class="value">--</span> lx</p>
+      </div>
 
-  <div class="sensor" onclick="window.location.href='havuç.html';">
-    <h3>Havuç</h3>
-    <img src="https://static.ticimax.cloud/36626/uploads/urunresimleri/buyuk/havuc-kg-454fa0.jpg" alt="Havuç">
-    <p>Nem: <span class="value">--</span> %</p>
-    <p>Sıcaklık: <span class="value">--</span> °C</p>
-    <p>Işık: <span class="value">--</span> lx</p>
-  </div>
+      <div class="sensor" onclick="window.location.href='biber.html';">
+        <h3>Biber</h3>
+        <img src="https://www.islek.com.tr/images/product/6035321654721-355-biber.jpg" alt="Biber">
+        <p>Nem: <span class="value">--</span> %</p>
+        <p>Sıcaklık: <span class="value">--</span> °C</p>
+        <p>Işık: <span class="value">--</span> lx</p>
+      </div>
 
-</div>
+      <div class="sensor" onclick="window.location.href='havuç.html';">
+        <h3>Havuç</h3>
+        <img src="https://static.ticimax.cloud/36626/uploads/urunresimleri/buyuk/havuc-kg-454fa0.jpg" alt="Havuç">
+        <p>Nem: <span class="value">--</span> %</p>
+        <p>Sıcaklık: <span class="value">--</span> °C</p>
+        <p>Işık: <span class="value">--</span> lx</p>
+      </div>
+
+    </div>
+  </section>
+
 </body>
 </html>
