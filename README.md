@@ -44,10 +44,22 @@ Lumina, uzun süreli uzay görevleri ve gelecekteki uzay kolonileri için tasarl
 - Yapay zeka ile otomatik risk ve üretim optimizasyonu.
 - LeafHealth ve updateSensors fonksiyonlarının bug fix’leri:
 
-- ![İSTASYON](https://github.com/user-attachments/assets/a591c76d-30ba-4509-b27d-d27d68fc2faf)
-![astronottt](https://github.com/user-attachments/assets/e0208571-010b-4f77-9a6e-1904bb6f4be8)
-<img width="1536" height="1024" alt="ChatGPT Image 29 Mar 2026 02_10_24" src="https://github.com/user-attachments/assets/3af66340-a761-469a-b865-76051fcc1da5" />
+<!-- Resimler için container -->
+<div style="display: flex; justify-content: space-between; gap: 10px;">
 
+  <img src="https://github.com/user-attachments/assets/a591c76d-30ba-4509-b27d-d27d68fc2faf" 
+       alt="İstasyon" 
+       style="width: 32%; height: auto; object-fit: cover;">
+
+  <img src="https://github.com/user-attachments/assets/e0208571-010b-4f77-9a6e-1904bb6f4be8" 
+       alt="Astronot" 
+       style="width: 32%; height: auto; object-fit: cover;">
+
+  <img src="https://github.com/user-attachments/assets/3af66340-a761-469a-b865-76051fcc1da5" 
+       alt="İstasyon Görsel" 
+       style="width: 32%; height: auto; object-fit: cover;">
+
+</div>
 ```js
 // LeafHealth örnek düzeltme
 if (rand < 20) leafHealth = "hastalık";
