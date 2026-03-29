@@ -1,5 +1,21 @@
 # Lumina - Kapalı Döngü Uzay Tarımı Yaşam Destek Sistemi
 
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+
+  <img src="https://github.com/user-attachments/assets/a591c76d-30ba-4509-b27d-d27d68fc2faf" 
+       alt="İstasyon" 
+       style="width: 32%; height: auto; object-fit: cover;">
+
+  <img src="https://github.com/user-attachments/assets/e0208571-010b-4f77-9a6e-1904bb6f4be8" 
+       alt="Astronot" 
+       style="width: 32%; height: auto; object-fit: cover;">
+
+  <img src="https://github.com/user-attachments/assets/3af66340-a761-469a-b865-76051fcc1da5" 
+       alt="İstasyon Görsel" 
+       style="width: 32%; height: auto; object-fit: cover;">
+
+</div>
+
 Lumina, uzun süreli uzay görevleri ve gelecekteki uzay kolonileri için tasarlanmış **kapalı döngü, otonom aeroponik tarım sistemidir**. Bu sistem, AI ve IoT destekli sensörlerle bitki sağlığını takip eder ve sürdürülebilir gıda üretimi sağlar.
 
 ## 📌 Proje Amacı
