@@ -27,7 +27,7 @@ Lumina, uzun süreli uzay görevleri ve gelecekteki uzay kolonileri için tasarl
   - Işık seviyesi (lx)
   - Su seviyesi (%)
 - Kontrol slider’ları ile manuel ayarlama.
-- Tohum ekleme ve ürün takibi simülasyonu.
+- Tohum ekme ve ürün takibi simülasyonu.
 - Yaprak sağlığı ve risk durumu simülasyonu.
 
 ### 3. Simülasyon Mantığı (JavaScript)
