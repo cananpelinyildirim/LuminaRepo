@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitki 1 Detay</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #84bc9a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  h1 { color: #2e7d32; }
+  img {
+    width: 300px;
+    border-radius: 15px;
+    border: 2px solid #2e7d32;
+    margin-bottom: 15px;
+  }
+  .control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #2e7d32;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  button:hover { background-color: #1b5e20; }
+  label {
+    margin-top: 10px;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+  }
+  input[type=range] { width: 150px; }
+  #alertBox {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #ffeb3b;
+    color: #000;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>Domates</h1>
+<img src="https://toprakana.com.tr/wp-content/uploads/2021/12/cherry-domates-kg-1481-jpg.jpeg" alt="Bitki 1">
+
+<div class="control">
+  <p>Üretim Şekli: Aeroponik</p>
+  <p>Toprak Türü: Organik Karışım</p>
+  <p>Nem: <span id="humidity">--</span>%</p>
+  <p>Sıcaklık: <span id="temperature">--</span>°C</p>
+  <p>Işık Seviyesi: <span id="light">--</span> lx</p>
+  <p>Su Seviyesi: <span id="water">--</span>%</p>
+
+  <!-- Sıcaklık Slider -->
+  <label>Sıcaklık: 
+    <input type="range" min="15" max="35" value="25" id="tempSlider" oninput="adjustTemperature(this.value)">
+    <span id="tempVal">25</span>°C
+  </label>
+
+  <!-- Işık Slider -->
+  <label>Işık Seviyesi: 
+    <input type="range" min="0" max="1000" value="500" id="lightSlider" oninput="adjustLight(this.value)">
+    <span id="lightVal">500</span> lx
+  </label>
+
+  <!-- Su Seviyesi Slider -->
+  <label>Su Seviyesi: 
+    <input type="range" min="0" max="100" value="50" id="waterSlider" oninput="adjustWater(this.value)">
+    <span id="waterVal">50</span> %
+  </label>
+
+  <!-- Tohum Ekle -->
+  <button onclick="addSeed()">Tohum Ekle 🌱</button>
+  
+ 
+
+  <!-- Tehlike Taraması Butonu -->
+  <button onclick="checkDanger()">Tehlike Taraması ⚠️</button>
+
+  <!-- Uyarı Kutusu -->
+  <div id="alertBox"></div>
+</div>
+
+<script>
+let humidity = 50;
+let temperature = 25;
+let light = 500;
+let waterLevel = 50;
+let leafHealth = "sağlıklı";
+
+// Tohum ve Ürün sayısı
+let seedCount = 0;
+let productCount = 0;
+
+// Sensör ve slider ayarları
+function adjustTemperature(val) {
+  temperature = val;
+  document.getElementById('temperature').textContent = val;
+  document.getElementById('tempVal').textContent = val;
+}
+
+function adjustLight(val) {
+  light = val;
+  document.getElementById('light').textContent = val;
+  document.getElementById('lightVal').textContent = val;
+}
+
+function adjustWater(val) {
+  waterLevel = val;
+  document.getElementById('water').textContent = val;
+  document.getElementById('waterVal').textContent = val;
+}
+
+// Tohum Ekleme
+function addSeed() {
+  seedCount++;
+  productCount += Math.floor(Math.random()*1) + 1; // rastgele ürün sayısı ekle
+  document.getElementById('seedCount').textContent = seedCount;
+  alert("Tohum eklendi! 🌱");
+}
+
+function updateLeafHealth() {
+  const rand = Math.random() * 100; // 0-100 arası rastgele sayı
+
+  if (rand < 20) leafHealth = "hastalık";      // %10
+  else if (rand < 20) leafHealth = "solma";    // %20
+  else if (rand < 20) leafHealth = "sararma";  // %20
+  else leafHealth = "sağlıklı";                // %50
+}
+
+setInterval(updateSensors, 5000);
+
+// Tehlike Taraması
+function checkDanger() {
+  let alertMsg = "";
+  if (humidity < 10) alertMsg += "⚠️ Nem çok düşük! ";
+  if (humidity > 90) alertMsg += "⚠️ Nem çok yüksek! ";
+  if (temperature < 20) alertMsg += "⚠️ Sıcaklık çok düşük! ";
+  if (temperature > 30) alertMsg += "⚠️ Sıcaklık çok yüksek! ";
+  if (light < 250) alertMsg += "⚠️ Işık yetersiz! ";
+  if (light > 750) alertMsg += "⚠️ Işık çok fazla! ";
+  if (waterLevel < 20) alertMsg += "⚠️ Su seviyesi çok düşük! ";
+  if (waterLevel > 80) alertMsg += "⚠️ Su seviyesi çok yüksek! ";
+  if (leafHealth === "solma") alertMsg += "⚠️ Yapraklar soluyor! ";
+  if (leafHealth === "sararma") alertMsg += "⚠️ Yapraklar sararıyor! ";
+  if (leafHealth === "hastalık") alertMsg += "⚠️ Bitki hastalık riski var! ";
+
+  const alertBox = document.getElementById('alertBox');
+  if (alertMsg === "") {
+    alertBox.style.display = 'block';
+    alertBox.style.backgroundColor = '#8bc34a';
+    alertBox.textContent = "✅ Her şey normal.";
+  } else {
+    alertBox.style.display = 'block';
+    alertBox.style.backgroundColor = '#ff5722';
+    alertBox.textContent = alertMsg;
+  }
+}
+</script>
+
+</body>
+</html>

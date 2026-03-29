@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitki İzleme Paneli</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0fff0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 { color: #2e7d32; margin-bottom: 20px; }
+
+  /* Horizontal scroll container */
+  .sensor-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .sensor {
+    background-color: #e8f5e9;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    width: 300px;
+    text-align: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .sensor:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+  width: 100px;
+  display: block;        /* en önemli satır */
+  margin: 0 auto;        /* ortalar */
+  transition: transform 1s ease, filter 0.3s ease;
+}
+
+  p { margin: 5px 0; }
+</style>
+</head>
+<body>
+
+<h1>Bitki İzleme Paneli</h1>
+
+<div class="sensor-container">
+
+  <!-- 7 Panel -->
+  <div class="sensor" onclick="window.location.href='Marul.html';">
+    <h3>Marul</h3>
+    <img src="https://www.ufuktarim.com/yuklemeler/recete-gorselleri/default/marul.jpg" alt="Marul">
+    <p>Nem: <span class="value">--</span> %</p>
+    <p>Sıcaklık: <span class="value">--</span> °C</p>
+    <p>Işık: <span class="value">--</span> lx</p>
+  </div>
+
+  <div class="sensor" onclick="window.location.href='soya.html';">
+    <h3>Soya Fasulyesi</h3>
+    <img src="https://vamostarim.com/wp-content/uploads/2022/12/Soya-Fasulyesi-Nedir-Nerede-Yetisir-Besin-Degeri.jpg" alt="Soya Fasulyesi">
+    <p>Nem: <span class="value">--</span> %</p>
+    <p>Sıcaklık: <span class="value">--</span> °C</p>
+    <p>Işık: <span class="value">--</span> lx</p>
+  </div>
+
+  <div class="sensor" onclick="window.location.href='Patates.html';">
+    <h3>Patates</h3>
+    <img src="https://apelasyon.com/images/icerikler/patates-mucizesi-apelasyon-60b28690a0a80.jpg" alt="Patates">
+    <p>Nem: <span class="value">--</span> %</p>
+    <p>Sıcaklık: <span class="value">--</span> °C</p>
+    <p>Işık: <span class="value">--</span> lx</p>
+  </div>
+
+  <div class="sensor" onclick="window.location.href='domates.html';">
+    <h3>Domates</h3>
+    <img src="https://toprakana.com.tr/wp-content/uploads/2021/12/cherry-domates-kg-1481-jpg.jpeg" alt="Domates">
+    <p>Nem: <span class="value">--</span> %</p>
+    <p>Sıcaklık: <span class="value">--</span> °C</p>
+    <p>Işık: <span class="value">--</span> lx</p>
+  </div>
+
+  <div class="sensor" onclick="window.location.href='cilek.html';">
+    <h3>Çilek</h3>
+    <img src="https://www.mottofresh.com/images/cilek.jpg" alt="Çilek">
+    <p>Nem: <span class="value">--</span> %</p>
+    <p>Sıcaklık: <span class="value">--</span> °C</p>
+    <p>Işık: <span class="value">--</span> lx</p>
+  </div>
+
+  <div class="sensor" onclick="window.location.href='biber.html';">
+    <h3>Biber</h3>
+    <img src="https://www.islek.com.tr/images/product/6035321654721-355-biber.jpg" alt="Biber">
+    <p>Nem: <span class="value">--</span> %</p>
+    <p>Sıcaklık: <span class="value">--</span> °C</p>
+    <p>Işık: <span class="value">--</span> lx</p>
+  </div>
+
+  <div class="sensor" onclick="window.location.href='havuç.html';">
+    <h3>Havuç</h3>
+    <img src="https://static.ticimax.cloud/36626/uploads/urunresimleri/buyuk/havuc-kg-454fa0.jpg" alt="Havuç">
+    <p>Nem: <span class="value">--</span> %</p>
+    <p>Sıcaklık: <span class="value">--</span> °C</p>
+    <p>Işık: <span class="value">--</span> lx</p>
+  </div>
+
+</div>
+</body>
+</html>
