@@ -43,6 +43,11 @@ Lumina, uzun süreli uzay görevleri ve gelecekteki uzay kolonileri için tasarl
 - Sensör verilerinin gerçek IoT cihazları ile entegrasyonu.
 - Yapay zeka ile otomatik risk ve üretim optimizasyonu.
 - LeafHealth ve updateSensors fonksiyonlarının bug fix’leri:
+
+- ![İSTASYON](https://github.com/user-attachments/assets/a591c76d-30ba-4509-b27d-d27d68fc2faf)
+![astronottt](https://github.com/user-attachments/assets/e0208571-010b-4f77-9a6e-1904bb6f4be8)
+<img width="1536" height="1024" alt="ChatGPT Image 29 Mar 2026 02_10_24" src="https://github.com/user-attachments/assets/3af66340-a761-469a-b865-76051fcc1da5" />
+
 ```js
 // LeafHealth örnek düzeltme
 if (rand < 20) leafHealth = "hastalık";
@@ -62,3 +67,7 @@ function updateSensors() {
   document.getElementById('water').textContent = waterLevel;
 }
 setInterval(updateSensors, 5000);
+
+
+
+
